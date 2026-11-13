@@ -1,0 +1,39 @@
+diff --git a/workspace/list/index.js b/workspace/list/index.js
+index c3d26e6e86324846cb7559166b71f3354cbbc787..9e53db7a7d6c1efe8aedfb317ade1212b84d86df 100644
+--- a/workspace/list/index.js
++++ b/workspace/list/index.js
+@@ -6,7 +6,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
+ exports.list = exports.ListOptions = void 0;
+ const fs_1 = __importDefault(require("fs"));
+ const path_1 = __importDefault(require("path"));
+-const zod_1 = require("zod");
++const zod_1 = require("zod/v3");
+ const options_1 = require("@wolfpkgs/core/options");
+ const modules_1 = require("@wolfpkgs/core/modules");
+ const grob_1 = require("@wolfpkgs/core/grob");
+diff --git a/workspace/prepare/index.js b/workspace/prepare/index.js
+index 15e70c9d30d0aae8f6efac1d2f8b890daa5a7af7..b69f03b6b58f28f2525170bae4017fd9d564987f 100644
+--- a/workspace/prepare/index.js
++++ b/workspace/prepare/index.js
+@@ -1,7 +1,7 @@
+ "use strict";
+ Object.defineProperty(exports, "__esModule", { value: true });
+ exports.prepare = exports.PrepareOptions = void 0;
+-const zod_1 = require("zod");
++const zod_1 = require("zod/v3");
+ const options_1 = require("@wolfpkgs/core/options");
+ /**
+  * Options.
+diff --git a/workspace/update/index.js b/workspace/update/index.js
+index 0c80fa9299ebe3c2609f7eb5ec4b8daa29827018..e1e1ded9dc96b7b17a629a31c5d6d11d92c4a868 100644
+--- a/workspace/update/index.js
++++ b/workspace/update/index.js
+@@ -7,7 +7,7 @@ exports.update = exports.UpdateOptions = void 0;
+ const semver_1 = __importDefault(require("semver"));
+ const promises_1 = __importDefault(require("fs/promises"));
+ const path_1 = __importDefault(require("path"));
+-const zod_1 = require("zod");
++const zod_1 = require("zod/v3");
+ const child_process_1 = require("child_process");
+ const options_1 = require("@wolfpkgs/core/options");
+ /**
