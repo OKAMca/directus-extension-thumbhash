@@ -1,0 +1,15 @@
+diff --git a/zod.js b/zod.js
+index 8988b3b566a591d40e45576963c536d12e485c73..be56a9aa02cfd0df7bea3d0c4d8759f7ee333a3e 100644
+--- a/zod.js
++++ b/zod.js
+@@ -6,8 +6,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
+ exports.outputFileAndDirectory = exports.inputFileAndDirectory = exports.toPath = exports.directory = exports.isZodEffect = exports.isZodObject = exports.Zod = void 0;
+ const fs_1 = __importDefault(require("fs"));
+ const path_1 = __importDefault(require("path"));
+-const zod_1 = require("zod");
+-var zod_2 = require("zod");
++const zod_1 = require("zod/v3");
++var zod_2 = require("zod/v3");
+ Object.defineProperty(exports, "Zod", { enumerable: true, get: function () { return zod_2.z; } });
+ function isZodObject(obj) {
+     if (!obj) {
