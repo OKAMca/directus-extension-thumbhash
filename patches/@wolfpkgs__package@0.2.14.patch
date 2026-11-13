@@ -1,0 +1,13 @@
+diff --git a/prepare/index.js b/prepare/index.js
+index 1bfae2c718d24027e1cd782398981cd044df57c1..4f7ea9141a76ee67f0f861c88727e29d240b1cd3 100644
+--- a/prepare/index.js
++++ b/prepare/index.js
+@@ -7,7 +7,7 @@ exports.prepare = exports.PrepareOptions = void 0;
+ const fs_1 = __importDefault(require("fs"));
+ const promises_1 = __importDefault(require("fs/promises"));
+ const path_1 = __importDefault(require("path"));
+-const zod_1 = require("zod");
++const zod_1 = require("zod/v3");
+ const pnpm_1 = require("@wolfpkgs/pnpm");
+ const options_1 = require("@wolfpkgs/core/options");
+ const modules_1 = require("@wolfpkgs/core/modules");

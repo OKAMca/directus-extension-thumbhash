@@ -1,16 +1,15 @@
 import {
-  type FieldsService,
-  type FilesService,
-  type ItemsService,
-  type AssetsService,
-} from "@directus/api";
-import { type HookConfig } from "@directus/types";
-import { type File } from "@directus/api/dist/types";
-import { defineHook } from "@directus/extensions-sdk";
+  type AbstractService,
+  type File,
+  type HookConfig,
+} from "@directus/types";
 
 import * as thumbhash from "thumbhash";
 
-export default defineHook<HookConfig>(async function (
+// Not wrapped in defineHook() from @directus/extensions-sdk: it is an identity
+// function, and with SDK 17 importing it bundles @directus/extensions (and zod)
+// into this API extension.
+const hook: HookConfig = async function (
   { init, action },
   { database, services, getSchema }
 ) {
@@ -23,25 +22,25 @@ export default defineHook<HookConfig>(async function (
     process.exit(1);
   }
 
-  const fieldsService: typeof FieldsService = services.FieldsService;
+  const fieldsService = services.FieldsService;
   async function getFieldsService() {
     return new fieldsService({ knex: database, schema: await getSchema() });
   }
 
-  const filesService: typeof FilesService = services.FilesService;
+  const filesService = services.FilesService;
   async function getFilesService() {
     return new filesService({
       knex: database,
       schema: await getSchema(),
-    }) as FilesService & ItemsService<File>;
+    }) as AbstractService<File & { thumbhash?: string | null }>;
   }
 
-  const assetsService: typeof AssetsService = services.AssetsService;
+  const assetsService = services.AssetsService;
   async function getAssetsService() {
     return new assetsService({ knex: database, schema: await getSchema() });
   }
 
-  const itemsService: typeof ItemsService = services.ItemsService;
+  const itemsService = services.ItemsService;
   async function getItemsService(collection: string) {
     return new itemsService(collection, {
       knex: database,
@@ -79,7 +78,7 @@ export default defineHook<HookConfig>(async function (
           comment: null,
           foreign_key_schema: null,
           generation_expression: null,
-        },
+        } as any,
         meta: {
           collection: "directus_files",
           field: "thumbhash",
@@ -264,4 +263,6 @@ export default defineHook<HookConfig>(async function (
       }
     }
   );
-}) as any;
+};
+
+export default hook;

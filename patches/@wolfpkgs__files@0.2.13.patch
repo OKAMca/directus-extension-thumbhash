@@ -1,0 +1,13 @@
+diff --git a/copy/index.js b/copy/index.js
+index ed9f3116b26aad41382c7ffc16456d4b67456a01..18c5ff254ef042ce4224ef9fd61936001a01bb36 100644
+--- a/copy/index.js
++++ b/copy/index.js
+@@ -7,7 +7,7 @@ exports.copy = exports.CopyOptions = void 0;
+ const promises_1 = __importDefault(require("fs/promises"));
+ const fast_glob_1 = __importDefault(require("fast-glob"));
+ const path_1 = __importDefault(require("path"));
+-const zod_1 = require("zod");
++const zod_1 = require("zod/v3");
+ const options_1 = require("@wolfpkgs/core/options");
+ /**
+  * Options.
