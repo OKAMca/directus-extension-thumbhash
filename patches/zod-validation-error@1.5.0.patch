@@ -1,0 +1,23 @@
+diff --git a/dist/cjs/ValidationError.js b/dist/cjs/ValidationError.js
+index ec213a6342f00f077fbe7bbf541d75b2eee52dbb..7abb65e09c80cc4958697a4d812bc33feaa8589d 100644
+--- a/dist/cjs/ValidationError.js
++++ b/dist/cjs/ValidationError.js
+@@ -24,7 +24,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
+ };
+ Object.defineProperty(exports, "__esModule", { value: true });
+ exports.errorMap = exports.isValidationErrorLike = exports.isValidationError = exports.toValidationError = exports.fromZodError = exports.fromZodIssue = exports.ValidationError = void 0;
+-const zod = __importStar(require("zod"));
++const zod = __importStar(require("zod/v3"));
+ const joinPath_1 = require("./utils/joinPath");
+ const NonEmptyArray_1 = require("./utils/NonEmptyArray");
+ const MAX_ISSUES_IN_MESSAGE = 99;
+diff --git a/dist/esm/ValidationError.js b/dist/esm/ValidationError.js
+index 03e2d9f786f735db3807ff76bda57aa8ba89be0b..42905183acc06ad3c8df93ea5e8d520dbe9cd0c2 100644
+--- a/dist/esm/ValidationError.js
++++ b/dist/esm/ValidationError.js
+@@ -1,4 +1,4 @@
+-import * as zod from 'zod';
++import * as zod from 'zod/v3';
+ import { joinPath } from './utils/joinPath';
+ import { isNonEmptyArray } from './utils/NonEmptyArray';
+ const MAX_ISSUES_IN_MESSAGE = 99;

@@ -40,9 +40,8 @@
     "dev": "nodemon --watch src/ -e ts --exec \"pnpm build:dev\""
   },
   "devDependencies": {
-    "@directus/api": "11.1.0",
-    "@directus/extensions-sdk": "10.1.4",
-    "@directus/types": "10.1.1",
+    "@directus/extensions-sdk": "17.1.4",
+    "@directus/types": "15.0.3",
     "@types/node": "^20.3.1",
     "@wolfpkgs/files": "^0.2.9",
     "@wolfpkgs/package": "^0.2.10",
@@ -53,7 +52,7 @@
     "typescript": "^5.1.3"
   },
   "peerDependencies": {
-    "sharp": "^0.33"
+    "sharp": "^0.35.5"
   },
   "peerDependenciesMeta": {
     "sharp": {
@@ -74,6 +73,27 @@
         "source": "./src/index.ts",
         "host": "10.3.0"
       }
+    }
+  },
+  "pnpm": {
+    "overrides": {
+      "@unhead/vue": "2.1.17",
+      "axios": "1.21.0",
+      "deepmerge": "npm:@shivammathur/deepmerge@4.3.2",
+      "joi": "18.3.1",
+      "js-yaml": "4.3.2",
+      "nanoid@5": "5.1.16",
+      "semver@>=7 <7.5.2": "^7.5.2",
+      "vite": "8.3.5",
+      "vue": "^3.5.45",
+      "zod": "4.6.7"
+    },
+    "patchedDependencies": {
+      "@wolfpkgs/core@0.2.13": "patches/@wolfpkgs__core@0.2.13.patch",
+      "@wolfpkgs/files@0.2.13": "patches/@wolfpkgs__files@0.2.13.patch",
+      "@wolfpkgs/package@0.2.14": "patches/@wolfpkgs__package@0.2.14.patch",
+      "@wolfpkgs/pnpm@0.2.14": "patches/@wolfpkgs__pnpm@0.2.14.patch",
+      "zod-validation-error@1.5.0": "patches/zod-validation-error@1.5.0.patch"
     }
   }
 }
