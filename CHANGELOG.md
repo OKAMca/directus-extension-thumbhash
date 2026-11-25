@@ -1,5 +1,11 @@
 # directus-extension-thumbhash
 
+## 0.0.6
+
+### Patch Changes
+
+- Update dependencies to fix audit advisories and require `sharp` ^0.35.5.
+
 ## 0.0.5
 
 ### Patch Changes
